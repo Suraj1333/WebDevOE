@@ -1,0 +1,67 @@
+<!-- HTML Document for Library Fine Computation. By Team 8. This HTML document features various individual sections that talks about the website, the input side, and the output side. The user can give the input here on the webpage and then recieve an output that displays the fine calculated.    -->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Fine Calculator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <!-- Java Script is included in the HTML file.-->
+  <body>
+    <hr class="hr_zero">
+    <div class="heading">
+        <h1 class="heading_main">LIBRARY FINE COMPUTATION. <span>(TEAM 8)</span></h1>        
+
+    </div>
+    <hr class="hr_one">
+<!-- Introduction Section.-->
+    <section class="hero">
+
+        <div class="text-section">
+            <p class="intro_text">A library fine computing website can be helpful for libraries to track overdue materials and calculate fines. This website, built using HTML, CSS, and JS, would features a simple interface where users can input the due date and the return date to view any outstanding fines. The website would have an algorithm that calculates the fine amount based on the number of days overdue and the library’s fine policy.
+            </p>
+            <br>
+            <p class="intro_text">
+                In this situation, the fine will be calculated when the users selects the due-date and the return date. This difference in the number of days would then be multiplied by the everyday fine, which in this case is $1.50
+            </p>
+        </div>
+
+        <div class="form-section">
+
+            <!-- Form for the user to input the due and the return date, to generate the fine amount that is to be paid.-->
+            <form>
+
+            <label for="due-date">DUE DATE</label> <br>
+            <input type="date" id="due-date" name="due-date"><br><br>
+            <label for="return-date">RETURN DATE</label> <br>
+            <input type="date" id="return-date" name="return-date"><br><br>
+            <input type="button" id="button" value="CALCULATE FINE" onclick="calculateFine()"><br><br>
+
+            </form>
+
+        </div>
+        <div id="fine">
+            <h4>FINE WILL BE DISPLAYED HERE.</h4> <br><br><br>
+            <p id="display_fine"></p>
+        </div>
+
+    </section>
+
+    <!-- Javascript algorithm to calculate the fines.-->
+
+    <script>
+      function calculateFine() {
+        var dueDate = new Date(document.getElementById("due-date").value);
+        var returnDate = new Date(document.getElementById("return-date").value);
+        var daysLate = (returnDate - dueDate) / (1000 * 60 * 60 * 24);
+        var fine = daysLate * 1.5;
+        document.getElementById("display_fine").innerHTML = " $" + fine.toFixed(2);
+      }
+    </script>
+
+  </body>
+</html>
