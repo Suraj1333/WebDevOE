@@ -3,5 +3,6 @@ This repository contains the code for a Library Fine Computation Website which w
 
 Website Preview: 
 
-![image](https://user-images.githubusercontent.com/80436298/236670141-a86b7b82-58da-4cc8-8f90-daec128d98d7.png)
+![image](https://user-images.githubusercontent.com/80436298/236670175-6f66bdf7-2b3c-4ecc-a381-80e813662815.png)
+
 
